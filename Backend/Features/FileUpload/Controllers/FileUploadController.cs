@@ -1,4 +1,5 @@
-﻿using Backend.Features.FileUpload.Services;
+﻿using Backend.Features.FileUpload.Models;
+using Backend.Features.FileUpload.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Features.FileUpload.Controllers
@@ -9,13 +10,14 @@ namespace Backend.Features.FileUpload.Controllers
     {
         private readonly IFileStorageService _fileUploadService = fileUploadService;
 
+        [HttpPost("upload")]
         public async Task<IActionResult> UploadFile([FromForm] IFormFile file)
         {
             if (file == null || file.Length == 0)
                 return BadRequest("No file uploaded.");
 
             var fileId = await _fileUploadService.SaveFileAsync(file);
-            return Ok(new { FileId = fileId });
+            return Ok(new UploadFileResponse { FileId = fileId });
         }
 
         public async Task<IActionResult> DownloadFile(string fileId)
