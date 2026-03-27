@@ -1,4 +1,4 @@
 <Solution>
   <Project Path="../Telegram/Telegram.csproj" />
-  <Project Path="Server.csproj" />
+  <Project Path="Backend.csproj" />
 </Solution>
