@@ -2,13 +2,15 @@
 {
     public class FileStorageService : IFileStorageService
     {
-        private readonly string _storagePath = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
+        private readonly string _storagePath;
 
-        public FileStorageService()
+        public FileStorageService(string? storagePath = null)
         {
+            _storagePath = storagePath ?? Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
             if (!Directory.Exists(_storagePath))
                 Directory.CreateDirectory(_storagePath);
         }
+
 
         public async Task<string> SaveFileAsync(IFormFile file)
         {
