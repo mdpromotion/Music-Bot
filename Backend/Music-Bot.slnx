@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="../Backend.Tests/Backend.Tests.csproj" Id="11e5d314-bbcb-435d-a00e-497c1f8ef23b" />
-  <Project Path="../Telegram/Telegram.csproj" />
-  <Project Path="Backend.csproj" />
-</Solution>
