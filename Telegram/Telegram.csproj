@@ -9,7 +9,6 @@
     <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
     <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:10.0-nanoserver-ltsc2022</ContainerBaseImage>
     <UserSecretsId>76f5b0bb-fabf-4b3c-b3cb-4f0518f1a1bb</UserSecretsId>
-    <DockerfileContext>..\Music-Bot</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
