@@ -1,10 +1,11 @@
 ﻿using Backend.Application.Common;
 using Backend.Application.UseCases;
 using Backend.Domain.ValueObjects;
+using Backend.Infrastructure.Interfaces;
 
 namespace Backend.Application.Orchestrator
 {
-    public class AudioProcessingOrchestrator
+    public class AudioProcessingOrchestrator : IAudioOrchestrator
     {
         private readonly ValidateFileUseCase _validateFile;
         private readonly ConvertAudioUseCase _convertAudio;

@@ -9,5 +9,7 @@ namespace Backend.Application.Interfaces
         Result<TaskItem> CreateTask(TaskMetadata metadata);
         bool DeleteTask(Guid id);
         Result<TaskItem> GetTask(Guid id);
+        bool TryGetAndLockPendingTask(out TaskItem? task);
+        void Update(TaskItem task);
     }
 }
