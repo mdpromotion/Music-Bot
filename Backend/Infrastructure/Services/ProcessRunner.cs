@@ -7,7 +7,7 @@ namespace Backend.Infrastructure.Services
     {
         public async Task<int> RunAsync(string fileName, string args, CancellationToken ct)
         {
-            var process = new Process
+            using var process = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
@@ -21,7 +21,14 @@ namespace Backend.Infrastructure.Services
             };
 
             process.Start();
+
+            var errorTask = process.StandardError.ReadToEndAsync();
+            var outputTask = process.StandardOutput.ReadToEndAsync();
+
             await process.WaitForExitAsync(ct);
+
+            var stderr = await errorTask;
+            var stdout = await outputTask;
 
             return process.ExitCode;
         }
