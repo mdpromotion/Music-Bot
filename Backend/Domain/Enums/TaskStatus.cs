@@ -1,6 +1,6 @@
 ﻿namespace Backend.Domain.Enums
 {
-    public enum TaskStatus
+    public enum Status
     {
         Pending,
         Processing,

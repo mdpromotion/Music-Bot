@@ -1,8 +1,7 @@
 ﻿namespace Backend.Domain.ValueObjects
 {
-    public class TaskMetadata
+    public class SoundMetadata
     {
-        public required string SoundPath { get; set; }
         public required string Author { get; set; }
         public required string Title { get; set; }
     }
